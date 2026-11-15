@@ -1,0 +1,28 @@
+:root {
+    --pke-dark: #2c3e50;
+    --pke-nav: #34495e;
+    --pke-accent: #1abc9c;
+    --pke-hero: #eef2f5;
+}
+body {
+    background-color: #f4f4f9;
+}
+.bg-pke-dark {
+    background-color: var(--pke-dark);
+}
+.bg-pke-nav {
+    background-color: var(--pke-nav);
+}
+.bg-pke-hero {
+    background-color: var(--pke-hero);
+}
+.bg-pke-nav .nav-link {
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 0.25rem;
+}
+.bg-pke-nav .nav-link:hover,
+.bg-pke-nav .nav-link:focus {
+    background-color: var(--pke-accent);
+    color: #ffffff;
+}

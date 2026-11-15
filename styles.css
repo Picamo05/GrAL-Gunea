@@ -26,3 +26,11 @@ body {
     background-color: var(--pke-accent);
     color: #ffffff;
 }
+.section-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.section-card:hover,
+.section-card:focus-visible {
+    transform: translateY(-0.2rem);
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
+}

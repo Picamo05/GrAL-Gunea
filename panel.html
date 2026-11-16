@@ -26,20 +26,31 @@
         <div class="row justify-content-center">
             <div class="col-12 col-lg-10 col-xl-9">
 
+                <section class="card border-0 shadow-sm mb-4" aria-labelledby="studentSearchTitle">
+                    <div class="card-body p-4">
+                        <h1 id="studentSearchTitle" class="h4 fw-bold">Bilatu ikasleak</h1>
+                        <label for="studentSearch" class="form-label">Bilatu izenaren edo ikasle-kodearen arabera</label>
+                        <input type="search" class="form-control mb-3" id="studentSearch"
+                               placeholder="Adibidez, Ane edo 2026-GRAL-042" autocomplete="off">
+                        <div id="studentList" class="list-group" aria-label="Ikasleen emaitzak"></div>
+                        <p id="searchResultsStatus" class="visually-hidden" aria-live="polite"></p>
+                    </div>
+                </section>
+
                 <div class="d-flex flex-wrap justify-content-between align-items-start gap-3 mb-4">
                     <div>
-                        <p class="text-uppercase text-muted small fw-semibold mb-1">Ikaslearen fitxa</p>
-                        <h1 class="h2 fw-bold mb-1">Ane Etxeberria</h1>
-                        <p class="text-muted mb-0">NAN: 12345678Z · Ikasle kodea: 2026-GRAL-042</p>
+                        <p class="text-uppercase text-muted small fw-semibold mb-1">Ikaslearen fitxa · demo</p>
+                        <h2 id="studentName" class="h2 fw-bold mb-1">Ane Etxeberria</h2>
+                        <p class="text-muted mb-0">Ikasle kodea: <span id="studentCode">2026-GRAL-042</span></p>
                     </div>
                     <span class="badge text-bg-warning">Demo</span>
                 </div>
 
-                <div class="alert alert-success d-flex gap-3 align-items-start shadow-sm" role="status">
-                    <span class="status-badge bg-success text-white" aria-hidden="true">✓</span>
+                <div id="defenseAlert" class="alert alert-success d-flex gap-3 align-items-start shadow-sm" role="status" aria-live="polite">
+                    <span id="defenseIcon" class="status-badge bg-success text-white" aria-hidden="true">✓</span>
                     <div>
-                        <h2 class="h5 alert-heading mb-1">Defentsarako baldintzak beteta</h2>
-                        <p class="mb-0">Ikasleak defentsarako beharrezko kreditu guztiak gainditu ditu eta ezohiko deialdian matrikulatuta dago. Defentsa egiteko baimena du.</p>
+                        <h3 id="defenseTitle" class="h5 alert-heading mb-1">Defentsarako baldintzak beteta</h3>
+                        <p id="defenseDescription" class="mb-0">Ikasleak defentsarako beharrezko kreditu guztiak gainditu ditu eta ezohiko deialdian matrikulatuta dago. Defentsa egiteko baimena du.</p>
                     </div>
                 </div>
 
@@ -48,10 +59,10 @@
                         <div class="card h-100 border-0 shadow-sm">
                             <div class="card-body">
                                 <h2 class="text-uppercase text-muted small fw-semibold mb-2">Gainditutako kredituak</h2>
-                                <p class="fs-2 fw-bold mb-2">180 <span class="fs-5 text-muted fw-normal">/ 180</span></p>
-                                <div class="progress" role="progressbar" aria-label="Gainditutako kredituak"
+                                <p class="fs-2 fw-bold mb-2"><span id="creditsValue">180</span> <span class="fs-5 text-muted fw-normal">/ 180</span></p>
+                                <div id="creditsProgress" class="progress" role="progressbar" aria-label="Gainditutako kredituak"
                                      aria-valuenow="180" aria-valuemin="0" aria-valuemax="180">
-                                    <div class="progress-bar bg-success w-100"></div>
+                                    <div id="creditsProgressBar" class="progress-bar bg-success" style="width: 100%;"></div>
                                 </div>
                                 <p class="form-text mb-0">Defentsarako gutxienekoa: 180 kreditu.</p>
                             </div>
@@ -62,8 +73,8 @@
                         <div class="card h-100 border-0 shadow-sm">
                             <div class="card-body">
                                 <h2 class="text-uppercase text-muted small fw-semibold mb-2">Matrikula mota</h2>
-                                <p class="fs-4 fw-bold mb-2">Ezohiko deialdia</p>
-                                <span class="badge text-bg-success">Matrikulatuta</span>
+                                <p id="enrollmentValue" class="fs-4 fw-bold mb-2">Ezohiko deialdia</p>
+                                <span id="enrollmentBadge" class="badge text-bg-success">Matrikulatuta</span>
                                 <p class="form-text mb-0">2026/2027 ikasturtea.</p>
                             </div>
                         </div>
@@ -73,8 +84,8 @@
                         <div class="card h-100 border-0 shadow-sm">
                             <div class="card-body">
                                 <h2 class="text-uppercase text-muted small fw-semibold mb-2">Ezohiko deialdian baimena</h2>
-                                <p class="fs-4 fw-bold mb-2">Baimenduta</p>
-                                <span class="badge text-bg-success">Bai</span>
+                                <p id="permissionValue" class="fs-4 fw-bold mb-2">Baimenduta</p>
+                                <span id="permissionBadge" class="badge text-bg-success">Bai</span>
                                 <p class="form-text mb-0">Ezohiko deialdian parte hartzeko baimena.</p>
                             </div>
                         </div>
@@ -84,8 +95,8 @@
                         <div class="card h-100 border-0 shadow-sm">
                             <div class="card-body">
                                 <h2 class="text-uppercase text-muted small fw-semibold mb-2">Defentsarako baldintza</h2>
-                                <p class="fs-4 fw-bold mb-2">Beteta</p>
-                                <span class="badge text-bg-success">180/180 kreditu</span>
+                                <p id="conditionValue" class="fs-4 fw-bold mb-2">Beteta</p>
+                                <span id="conditionBadge" class="badge text-bg-success">180/180 kreditu</span>
                                 <p class="form-text mb-0">Defentsa egiteko baldintza akademikoak beteta.</p>
                             </div>
                         </div>
@@ -94,7 +105,7 @@
 
                 <div class="alert alert-light border mt-4 mb-0" role="note">
                     <p class="fw-semibold mb-1">Demo oharra</p>
-                    <p class="small mb-0">Datuak adibidekoak dira. Ez dago zerbitzaririk ezta benetako autentifikaziorik; HTML eta CSS soilik erabili dira.</p>
+                    <p class="small mb-0">Ikasleen izenak, kodeak eta egoerak adibidekoak dira. Ez dago zerbitzaririk ezta benetako autentifikaziorik; HTML, CSS eta JavaScript soilik erabili dira.</p>
                 </div>
 
                 <div class="d-grid d-sm-flex justify-content-sm-end mt-4">
@@ -111,5 +122,100 @@
         </div>
     </footer>
 
+<script>
+    const students = [
+        { name: "Ane Etxeberria", code: "2026-GRAL-042", credits: 180, enrollment: "Ezohiko deialdia", extraordinaryPermission: true },
+        { name: "Iker Arrieta", code: "2026-GRAL-018", credits: 180, enrollment: "Lehenengo deialdia", extraordinaryPermission: true },
+        { name: "Leire Mendizabal", code: "2026-GRAL-027", credits: 168, enrollment: "Bigarren deialdia", extraordinaryPermission: false },
+        { name: "Unai Etxaniz", code: "2026-GRAL-033", credits: 174, enrollment: "Lehenengo deialdia", extraordinaryPermission: false },
+        { name: "Nerea Agirre", code: "2026-GRAL-051", credits: 180, enrollment: "Hirugarren deialdia", extraordinaryPermission: true },
+        { name: "Jon Ander Etxeberria", code: "2026-GRAL-063", credits: 150, enrollment: "Laugarren deialdia", extraordinaryPermission: false }
+    ];
+
+    const searchInput = document.getElementById("studentSearch");
+    const studentList = document.getElementById("studentList");
+    const searchResultsStatus = document.getElementById("searchResultsStatus");
+    let selectedStudent = students[0];
+
+    function renderStudentList() {
+        const query = searchInput.value.trim().toLocaleLowerCase("eu");
+        const filteredStudents = students.filter((student) =>
+            `${student.name} ${student.code}`.toLocaleLowerCase("eu").includes(query)
+        );
+
+        studentList.replaceChildren();
+        filteredStudents.forEach((student) => {
+            const button = document.createElement("button");
+            button.type = "button";
+            button.className = "list-group-item list-group-item-action";
+            button.textContent = `${student.name} · ${student.code}`;
+            button.dataset.studentCode = student.code;
+            button.setAttribute("aria-pressed", String(student.code === selectedStudent.code));
+            if (student.code === selectedStudent.code) {
+                button.classList.add("active");
+            }
+            studentList.append(button);
+        });
+
+        if (filteredStudents.length === 0) {
+            const emptyMessage = document.createElement("p");
+            emptyMessage.className = "list-group-item text-muted mb-0";
+            emptyMessage.textContent = "Ez da ikaslerik aurkitu.";
+            studentList.append(emptyMessage);
+        }
+
+        searchResultsStatus.textContent = `${filteredStudents.length} ikasle aurkitu dira.`;
+    }
+
+    function selectStudent(student) {
+        selectedStudent = student;
+        const defenseReady = student.credits >= 180;
+        const creditPercentage = Math.min((student.credits / 180) * 100, 100);
+
+        document.getElementById("studentName").textContent = student.name;
+        document.getElementById("studentCode").textContent = student.code;
+        document.getElementById("creditsValue").textContent = student.credits;
+        document.getElementById("creditsProgress").setAttribute("aria-valuenow", String(student.credits));
+        document.getElementById("creditsProgressBar").style.width = `${creditPercentage}%`;
+        document.getElementById("creditsProgressBar").className = `progress-bar ${defenseReady ? "bg-success" : "bg-warning"}`;
+        document.getElementById("enrollmentValue").textContent = student.enrollment;
+        document.getElementById("enrollmentBadge").className = `badge ${student.enrollment ? "text-bg-success" : "text-bg-secondary"}`;
+        document.getElementById("enrollmentBadge").textContent = student.enrollment ? "Matrikulatuta" : "Matrikulatu gabe";
+        document.getElementById("permissionValue").textContent = student.extraordinaryPermission ? "Baimenduta" : "Ez baimenduta";
+        document.getElementById("permissionBadge").className = `badge ${student.extraordinaryPermission ? "text-bg-success" : "text-bg-secondary"}`;
+        document.getElementById("permissionBadge").textContent = student.extraordinaryPermission ? "Bai" : "Ez";
+        document.getElementById("conditionValue").textContent = defenseReady ? "Beteta" : "Bete gabe";
+        document.getElementById("conditionBadge").className = `badge ${defenseReady ? "text-bg-success" : "text-bg-warning"}`;
+        document.getElementById("conditionBadge").textContent = `${student.credits}/180 kreditu`;
+
+        const defenseAlert = document.getElementById("defenseAlert");
+        defenseAlert.className = `alert ${defenseReady ? "alert-success" : "alert-warning"} d-flex gap-3 align-items-start shadow-sm`;
+        document.getElementById("defenseIcon").className = `status-badge ${defenseReady ? "bg-success" : "bg-warning"} text-white`;
+        document.getElementById("defenseIcon").textContent = defenseReady ? "✓" : "!";
+        document.getElementById("defenseTitle").textContent = defenseReady
+            ? "Defentsarako baldintzak beteta"
+            : "Defentsarako baldintzak bete gabe";
+        document.getElementById("defenseDescription").textContent = defenseReady
+            ? `Ikasleak ${student.credits} kreditu gainditu ditu eta ${student.enrollment.toLowerCase()} dago.`
+            : `Ikasleak ${student.credits} kreditu gainditu ditu; defentsarako 180 kreditu behar dira.`;
+
+        renderStudentList();
+    }
+
+    searchInput.addEventListener("input", renderStudentList);
+    studentList.addEventListener("click", (event) => {
+        const button = event.target.closest("button[data-student-code]");
+        if (!button) {
+            return;
+        }
+
+        const student = students.find((item) => item.code === button.dataset.studentCode);
+        if (student) {
+            selectStudent(student);
+        }
+    });
+
+    renderStudentList();
+</script>
 </body>
 </html>

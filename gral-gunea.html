@@ -56,16 +56,15 @@
                     <div class="card border-0 shadow-sm">
                         <div class="card-body p-4">
                             <div class="d-flex align-items-center gap-3 mb-3">
-                                <span class="auth-logo" aria-hidden="true">G</span>
                                 <div>
                                     <h2 id="saioaHasiTitulua" class="h4 mb-1">Saioa hasi</h2>
-                                    <p class="text-muted small mb-0">Sartu zure langile-kontuarekin ikasleen egoera administratiboa kontsultatzeko.</p>
+                                    <p class="text-muted small mb-0">Demoa: sartu botoiak panelera eramango zaitu, autentifikaziorik gabe.</p>
                                 </div>
                             </div>
 
                             <div class="d-flex flex-wrap gap-2 mb-3">
-                                <span class="badge bg-pke-nav text-white">Langile profila</span>
-                                <span class="badge text-bg-light border">Bi faktorea</span>
+                                <span class="badge bg-pke-nav text-white">Demo panela</span>
+                                <span class="badge text-bg-light border">Sarbide irekia</span>
                             </div>
 
                             <form action="panel.html" method="get">
@@ -73,20 +72,18 @@
                                     <label for="erabiltzailea" class="form-label fw-semibold">Erabiltzailea</label>
                                     <input type="text" class="form-control form-control-lg" id="erabiltzailea"
                                            placeholder="Erabiltzailea" autocomplete="username" autocapitalize="none"
-                                           spellcheck="false" pattern="maite" required>
+                                           spellcheck="false">
                                 </div>
                                 <div class="mb-3">
                                     <label for="pasahitza" class="form-label fw-semibold">Pasahitza</label>
                                     <input type="password" class="form-control form-control-lg" id="pasahitza"
-                                           placeholder="Pasahitza" autocomplete="current-password"
-                                           pattern="GrAL2026" required>
+                                           placeholder="Pasahitza" autocomplete="current-password">
                                 </div>
                                 <div class="mb-3">
                                     <label for="kodea" class="form-label fw-semibold">Bi faktoreko kodea</label>
                                     <input type="text" class="form-control form-control-lg" id="kodea"
-                                           placeholder="6 digituko kodea" inputmode="numeric" maxlength="6"
-                                           autocomplete="one-time-code" pattern="123456" required>
-                                    <div class="form-text">Sartu autentifikazio-aplikazioko 6 digituko kodea.</div>
+                                           placeholder="Kodea (aukerakoa)" autocomplete="one-time-code">
+                                    <div class="form-text">Demo honetan balioak ez dira egiaztatzen edo panelera bidaltzen.</div>
                                 </div>
                                 <button type="submit" class="btn btn-dark btn-lg w-100">Sartu</button>
                             </form>

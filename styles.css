@@ -34,3 +34,29 @@ body {
     transform: translateY(-0.2rem);
     box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
 }
+.auth-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background-color: var(--pke-dark);
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1;
+    flex-shrink: 0;
+}
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    flex-shrink: 0;
+}
